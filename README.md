@@ -10,6 +10,8 @@ Default pinout is the following:
 - `GPIO5` connected to `CC_RST`
 - `GPIO12`connected to `CC_DD` aka `P2_1` or `Debug Data`
 
+[![Pinlayout](https://github.com/Jason2866/CCLib/blob/master/webee_cc2530_cc2591_pinlayout.png)]
+
 Tasmota Zigbee currenlty only supports **ZNP 1.2 default mode** for coordinator. CCLib requires to remove the second last line.
 
 For convenience, ready to use firmwares are provided, just unzip them and select the right one: `CC2530`, `CC2530 + CC2591` or `CC2530 + CC2592`.
@@ -53,7 +55,7 @@ Debug config:
  [ ] TIMER_SUSPEND
 ```
 
-To flash the firmware, use the following command: (flashing takes \~1 hours)
+To flash the firmware, use the following command: (flashing takes \~20 minutes)
 
 ```python Python/cc_write_flash.py -e -p /dev/cu.usbserial-1420 -i Bin/CC2530_DEFAULT_20190608_CC2530ZNP-Prod.hex```
 
@@ -112,40 +114,9 @@ It currently supports the CC2530/40/41 chips ([compatibility table](#compatibili
 
 Keep in mind but this more than just a set of utilities! It comes with complete, reusable Arduino and Python libraries for adding CC.Debugger support to your projects!
 
-## Usage
 
-If you are just in hurry to flash your CCxxxx chip, follow this guide, however you should first check the [compatibility table](#compatibility-table) later in this document!
 
-### 1. Prepare your arduino board
-
-1. Install the `Arduino/CCLib` library [to your arduino IDE](https://www.arduino.cc/en/Guide/Libraries)
-2. Load the `CCLib_proxy` example and change the the `LED`, `CC_RST`, `CC_DC`, `CC_DD_I` and `CC_DD_O` constants to match your configuration.
-3. Flash it to your Teensy/Arduino
-4. We are going to need a voltage divider from 5V (arduino) to 3.3V (CCxxxx chip), therefore you will need to wire your arduino according to the following diagram:
-
-```
-For the DD Pin:
-
- <CC_DD_O> --[ 100k ]-- <CC_DD_I> --[ 200k ]-- <GND>
-                            |
-                           {DD}
-
-For the DC Pin:
-
- <CC_DC> --[ 100k ]-- {DC} --[ 200k ]-- <GND>
-
-For the RST Pin:
-
- <CC_RST> --[ 100k ]-- {RST} --[ 200k ]-- <GND>
-```
-
-Where `{DD}`, `{DC}` and `{RST}` are the pins on the CCxxxx chip and `<CC_DD_O>`, `<CC_DD_I>`, `<CC_DC>`, `<CC_RST>` are the pins in your ardiuno board.
-
-In an arduino/breadboard set-up, this looks like this:
-
-<img src="https://raw.githubusercontent.com/wavesoft/CCLib/master/Schematic/arduino-wiring.png" width="550" />
-
-### 2. Prepare your software
+### Prepare your software
 
 1. You will need Python 2.7 or later installed to your system
 2. Open a terminal and change directory into the `Python` folder of this project
@@ -183,7 +154,7 @@ Device information:
            PC : 0000
 ```
 
-### 3. Using the software
+### Using the software
 
 The python utilities provide a straightforward interface for reading/writing to your CCxxxx chip:
 
