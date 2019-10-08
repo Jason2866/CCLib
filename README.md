@@ -10,6 +10,8 @@ Default pinout is the following:
 - `GPIO5` connected to `CC_RST`
 - `GPIO12`connected to `CC_DD` aka `P2_1` or `Debug Data`
 
+[![layout](https://github.com/Jason2866/CCLib/blob/master/cc2530_pin_layout.png)](https://github.com/Jason2866/CCLib/blob/master)
+
 [![Pinlayout](https://github.com/Jason2866/CCLib/blob/master/webee_cc2530_cc2591_pinlayout.png)](https://github.com/Jason2866/CCLib/blob/master)
 
 Tasmota Zigbee currenlty only supports **ZNP 1.2 default mode** for coordinator. CCLib requires to remove the second last line.
