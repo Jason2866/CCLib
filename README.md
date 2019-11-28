@@ -2,8 +2,6 @@ This fork from CCLib is meant to simplify the flashing of CC2530 devices with a 
 
 It is based on this [fork](https://github.com/kirovilya/CCLib) from `kirovilya` and instructions described in this [blog post](https://www.zigbee2mqtt.io/information/alternative_flashing_methods.html).
 
-The port speed is reduced to 19200 to avoid communication errors :`ERROR: Could not read from the serial port!`
-
 Default pinout is the following:
 
 - `GPIO4` connected to `CC_DC` aka `P2_2` or `Debug Clock`
