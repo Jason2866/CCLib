@@ -4,9 +4,9 @@ It is based on this [fork](https://github.com/kirovilya/CCLib) from `kirovilya` 
 
 Default pinout is the following:
 
-- `GPIO4` connected to `CC_DC` aka `P2_2` or `Debug Clock`
-- `GPIO5` connected to `CC_RST`
-- `GPIO12`connected to `CC_DD` aka `P2_1` or `Debug Data`
+- `GPIO4 (D2)` connected to `CC_DC` aka `P2_2` or `Debug Clock`
+- `GPIO5 (D1)` connected to `CC_RST`
+- `GPIO12 (D6)`connected to `CC_DD` aka `P2_1` or `Debug Data`
 
 Pinout CC2530:
 [![layout](https://github.com/Jason2866/CCLib/blob/master/cc2530_pin_layout.png)](https://github.com/Jason2866/CCLib/blob/master)
